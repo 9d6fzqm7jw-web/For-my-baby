@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Soniya 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  height:100vh;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(to bottom,#ffd1dc,#ff9aa2);
+  overflow:hidden;
+}
+
+.section{
+  display:none;
+  height:100vh;
+  width:100%;
+  padding:25px;
+  text-align:center;
+  color:#7a1c3d;
+}
+
+.section.active{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+h1{
+  font-family:'Pacifico', cursive;
+  font-size:2.6rem;
+  margin-bottom:20px;
+}
+
+p{
+  max-width:800px;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+button{
+  background:#ff4d6d;
+  color:white;
+  border:none;
+  padding:12px 30px;
+  margin:10px;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{transform:scale(1.05);}
+
+.big-envelope{
+  width:260px;
+  height:180px;
+  background:#c1121f;
+  border-radius:20px;
+  position:relative;
+  cursor:pointer;
+  animation:bounce 2s infinite;
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.big-envelope::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#a30d16;
+  clip-path:polygon(0 0,50% 55%,100% 0);
+  border-radius:20px;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+
+/* FLOATING SMALL ENVELOPES */
+.floating-envelope{
+  position:absolute;
+  width:60px;
+  height:40px;
+  background:#ff6b81;
+  border-radius:6px;
+  opacity:0.6;
+  animation:floatUp 15s linear infinite;
+}
+
+.floating-envelope::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#ff4757;
+  clip-path:polygon(0 0,50% 50%,100% 0);
+  border-radius:6px;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(110vh) rotate(0deg);}
+  to{transform:translateY(-10vh) rotate(360deg);}
+}
+
+.letter{
+  display:none;
+  background:white;
+  color:#333;
+  padding:30px;
+  border-radius:20px;
+  max-width:850px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  animation:pop 0.5s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0.8);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+.hearts span{
+  position:absolute;
+  font-size:22px;
+  animation:heartUp 6s linear infinite;
+}
+
+@keyframes heartUp{
+  from{transform:translateY(100vh);opacity:1;}
+  to{transform:translateY(-10vh);opacity:0;}
+}
+
+.bear{
+  font-size:70px;
+  animation:cuddle 2s infinite alternate;
+}
+
+@keyframes cuddle{
+  from{transform:scale(1);}
+  to{transform:scale(1.1);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING BACKGROUND ENVELOPES -->
+<script>
+for(let i=0;i<15;i++){
+  let e=document.createElement("div");
+  e.className="floating-envelope";
+  e.style.left=Math.random()*100+"vw";
+  e.style.animationDuration=(Math.random()*10+10)+"s";
+  e.style.animationDelay=Math.random()*5+"s";
+  document.body.appendChild(e);
+}
+</script>
+
+<!-- SECTION 1 -->
+<div class="section active" id="s1">
+<h1>Hi Soniya 🌷</h1>
+<p>I just wanted to say something to you.<br>I hope it makes sense.</p>
+<button onclick="yes()">Yes</button>
+<button onclick="no()">No</button>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+<h1>Please 🥺</h1>
+<p>Can you try saying yes?</p>
+<button onclick="yes()">Yes</button>
+<button onclick="no()">No</button>
+</div>
+
+<!-- ENVELOPE SECTION -->
+<div class="section" id="s3">
+<h1>For You 💌</h1>
+<div class="big-envelope" onclick="openLetter()"></div>
+</div>
+
+<!-- LETTER -->
+<div class="section" id="letterSection">
+<div class="letter" id="letter">
+<p>
+Hi Soniya,  
+I know it might be cringe or weird, but I just wanted to confess my feelings.  
+
+Silence has always been my favourite thing in the world.  
+But now I want to be alone with you.  
+
+I want to look at you in silence,  
+hold you,  
+feel your heartbeat,  
+your hair between my fingers,  
+your head on my chest  
+while we talk about your favourite movies.  
+
+You are my favourite person.  
+Pretty. Beautiful. Smart.  
+
+It makes sense with you —  
+silence pani.  
+
+And I want you to be the happiest person  
+because you deserve the best.
+</p>
+<button onclick="showPoem()">Next</button>
+</div>
+</div>
+
+<!-- POEM -->
+<div class="section" id="poem">
+<p>
+I like you in a quiet way,<br>
+the way morning light<br>
+touches a room<br>
+without asking permission.
+<br><br>
+I like how talking to you feels easy.
+<br><br>
+Maybe this isn’t loud or dramatic,<br>
+just two people choosing each other,<br>
+one moment at a time.
+</p>
+<button onclick="final()">Next</button>
+</div>
+
+<!-- FINAL -->
+<div class="section" id="final">
+<h1>Will you be my girlfriend? 💖</h1>
+<div class="bear">🐻💞🐻</div>
+<button onclick="celebrate()">Yes</button>
+<button onclick="celebrate()">Yes</button>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+function yes(){
+  document.querySelector('.active').classList.remove('active');
+  document.getElementById('s3').classList.add('active');
+}
+
+function no(){
+  document.querySelector('.active').classList.remove('active');
+  document.getElementById('s2').classList.add('active');
+}
+
+function openLetter(){
+  document.getElementById('s3').classList.remove('active');
+  document.getElementById('letterSection').classList.add('active');
+  document.getElementById('letter').style.display='block';
+}
+
+function showPoem(){
+  document.getElementById('letterSection').classList.remove('active');
+  document.getElementById('poem').classList.add('active');
+}
+
+function final(){
+  document.getElementById('poem').classList.remove('active');
+  document.getElementById('final').classList.add('active');
+}
+
+function celebrate(){
+  for(let i=0;i<40;i++){
+    let h=document.createElement("span");
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(Math.random()*3+3)+"s";
+    document.getElementById("hearts").appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  }
+}
+</script>
+
+</body>
+</html>
